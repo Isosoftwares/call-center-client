@@ -17,7 +17,7 @@ const useSocket = () => {
 
     if (!token) return;
 
-    const socketInstance = io("https://call-center-api.tweetyservices.org", {
+    const socketInstance = io("https://calls-api.tweetyservices.org", {
       auth: {
         token,
       },
