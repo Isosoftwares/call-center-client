@@ -14,7 +14,7 @@ function Login() {
   const { setAuth } = useAuth();
   const [visiblePassword, setVisiblePassword] = useState(false);
 
-  const toDash = "/dashboard/overview";
+  const toDash = "/dashboard";
   const toAgent = "/agent/softphone";
 
   const {

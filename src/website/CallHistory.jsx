@@ -23,6 +23,8 @@ const CallHistory = () => {
     keepPreviousData: true,
   });
 
+  console.log(data);
+
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -32,7 +34,7 @@ const CallHistory = () => {
       <CallHistoryFilters filters={filters} onFiltersChange={setFilters} />
 
       <CallHistoryTable
-        data={data?.data}
+        data={data?.data?.data?.calls}
         isLoading={isLoading}
         filters={filters}
         onFiltersChange={setFilters}

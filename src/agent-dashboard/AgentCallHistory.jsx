@@ -1,12 +1,13 @@
 // ================================
 // PAGES/CALLHISTORY.JS - Call History Page
 // ================================
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { callsAPI } from "../services/api";
 import CallHistoryFilters from "../website/components/CallHistoryFilters";
 import CallHistoryTable from "../website/components/CallHistoryTable";
 import useAuth from "../hooks/useAuth";
+import axios from "../api/axios";
 
 const AgentCallHistory = () => {
   const { auth } = useAuth();
@@ -18,12 +19,20 @@ const AgentCallHistory = () => {
     phoneNumber: "",
     startDate: "",
     endDate: "",
-    agentId: auth?.userId || "",
+    agentId: auth?.userId ,
+  });
+
+  const queryParams = new URLSearchParams(filters).toString();
+
+
+  const fetchCallHistory = useCallback(async () => {
+    const response = await axios.get(`/record-calls/history?${queryParams}`);
+    return response;
   });
 
   const { data, isLoading } = useQuery({
     queryKey: ["call-history", filters],
-    queryFn: () => callsAPI.getCallHistory(filters),
+    queryFn: fetchCallHistory,
     keepPreviousData: true,
   });
 

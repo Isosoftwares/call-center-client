@@ -14,11 +14,12 @@ import { useQuery } from "@tanstack/react-query";
 import { authAPI } from "../../services/api";
 import AgentStatusBadge from "./AgentStatusBadge";
 import NotificationPanel from "./NotificationPanel";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useLogout from "../../hooks/useLogout";
 
 const Header = ({ isConnected, setSideNav, sideNav }) => {
   const [showNotifications, setShowNotifications] = useState(false);
+  const navigate = useNavigate();
 
   const { data: profile } = useQuery({
     queryKey: ["profile"],

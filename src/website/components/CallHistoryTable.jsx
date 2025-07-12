@@ -28,7 +28,7 @@ const CallHistoryTable = ({ data, isLoading, filters, onFiltersChange }) => {
     );
   }
 
-  const calls = data?.calls || [];
+  const calls = data || [];
   const pagination = data?.pagination || {};
 
   const formatDuration = (seconds) => {
@@ -146,7 +146,7 @@ const CallHistoryTable = ({ data, isLoading, filters, onFiltersChange }) => {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {call.agentInfo?.agentName || "Unassigned"}
+                      {call.assignedAgent?.agentName || "Unassigned"}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {formatDuration(call.callDetails?.duration)}

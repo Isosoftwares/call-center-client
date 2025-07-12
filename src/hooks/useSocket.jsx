@@ -17,7 +17,7 @@ const useSocket = () => {
 
     if (!token) return;
 
-    const socketInstance = io("http://192.168.100.46:3000", {
+    const socketInstance = io("http://192.168.100.5:3500", {
       auth: {
         token,
       },

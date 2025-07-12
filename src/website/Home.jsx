@@ -56,14 +56,14 @@ const Home = () => {
     {
       title: "Make a Call",
       description: "Start an outbound call to a customer",
-      href: "/dashboard/calls",
+      href: "/dashboard/softphone",
       icon: PhoneIcon,
       color: "bg-blue-600 hover:bg-blue-700",
     },
     {
-      title: "View Dashboard",
+      title: "Call History",
       description: "See detailed analytics and metrics",
-      href: "/dashboard/overview",
+      href: "/dashboard/calls/history",
       icon: ChartBarIcon,
       color: "bg-green-600 hover:bg-green-700",
     },
@@ -91,7 +91,7 @@ const Home = () => {
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {quickStats.map((stat, index) => (
             <div
               key={index}
@@ -120,7 +120,7 @@ const Home = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Quick Actions */}
         <div className="mb-8">
@@ -201,12 +201,7 @@ const Home = () => {
                   >
                     View Call History
                   </Link>
-                  <Link
-                    to="/dashboard/analytics"
-                    className="block text-sm text-blue-600 hover:text-blue-800"
-                  >
-                    Detailed Analytics
-                  </Link>
+
                   <Link
                     to="/dashboard/settings"
                     className="block text-sm text-blue-600 hover:text-blue-800"

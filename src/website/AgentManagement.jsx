@@ -15,15 +15,16 @@ const AgentManagement = () => {
     isOnline: "",
   });
 
-  const { data: agents, isLoading } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["agents", filters],
     queryFn: () => agentsAPI.getAgents(filters),
     refetchInterval: 30000,
   });
 
-
   return (
     <div className="space-y-6">
+      
+
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-gray-900">Agent Management</h1>
         <AgentStatusUpdate />
@@ -31,7 +32,7 @@ const AgentManagement = () => {
 
       <AgentFilters filters={filters} onFiltersChange={setFilters} />
 
-      <AgentsList agents={agents?.agents || []} isLoading={isLoading} />
+      <AgentsList agents={data?.data?.agents || []} isLoading={isLoading} />
     </div>
   );
 };

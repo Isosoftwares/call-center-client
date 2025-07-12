@@ -18,16 +18,16 @@ import {
 const navigation = [
   { name: "Home", href: "/dashboard", icon: HomeIcon },
   { name: "SoftPhone", href: "/dashboard/softphone", icon: HomeIcon },
-  { name: "Dashboard", href: "/dashboard/overview", icon: HomeIcon },
+  // { name: "Dashboard", href: "/dashboard/overview", icon: HomeIcon },
   { name: "Call History", href: "/dashboard/calls/history", icon: ClockIcon },
   { name: "Agents", href: "/dashboard/agents", icon: UsersIcon },
-  { name: "Analytics", href: "/dashboard/analytics", icon: ChartBarIcon },
-  {
-    name: "Phone Numbers",
-    href: "/dashboard/phone-numbers",
-    icon: DevicePhoneMobileIcon,
-  },
-  { name: "Settings", href: "/dashboard/settings", icon: Cog6ToothIcon },
+  // { name: "Analytics", href: "/dashboard/analytics", icon: ChartBarIcon },
+  // {
+  //   name: "Phone Numbers",
+  //   href: "/dashboard/phone-numbers",
+  //   icon: DevicePhoneMobileIcon,
+  // },
+  // { name: "Settings", href: "/dashboard/settings", icon: Cog6ToothIcon },
 ];
 
 const Sidebar = ({ setSideNav, sideNav }) => {

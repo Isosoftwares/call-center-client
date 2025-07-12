@@ -24,9 +24,9 @@ const RealTimeMetrics = () => {
   useEffect(() => {
     if (data?.data) {
       setMetrics({
-        activeCalls: data.data.calls.activeCalls || 0,
-        queuedCalls: data.data.calls.queuedCalls || 0,
-        availableAgents: data.data.agents.available || 0,
+        activeCalls: data.data.calls?.activeCalls || 0,
+        queuedCalls: data.data.calls?.queuedCalls || 0,
+        availableAgents: data.data.agents?.available || 0,
       });
     }
   }, [data]);
@@ -73,7 +73,7 @@ const RealTimeMetrics = () => {
         </div>
         <div className="text-center">
           <div className="text-3xl font-bold text-yellow-600">
-            {metrics.queuedCalls}
+            {metrics?.queuedCalls}
           </div>
           <div className="text-sm text-gray-500">Queued Calls</div>
         </div>

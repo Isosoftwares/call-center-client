@@ -18,7 +18,7 @@ import {
 const navigation = [
   { name: "SoftPhone", href: "/agent/softphone", icon: HomeIcon },
   { name: "Call History", href: "/agent/calls/history", icon: ClockIcon },
-  { name: "Settings", href: "/agent/settings", icon: Cog6ToothIcon },
+  // { name: "Settings", href: "/agent/settings", icon: Cog6ToothIcon },
 ];
 
 const Sidebar = ({ setSideNav, sideNav }) => {
